@@ -5,4 +5,7 @@
 
 # Neither instance should have had access to the secret recipes bucket, in the event that instance API credentials were compromised how could we have prevented access to sensitive data.
 
-- Enable server-side encryption on the S3 bucket
+- Use least privilege access for the existing instance role profile to only allow access to specific buckets rather than using a wildcard selector. (Could also use a bucket policy)
+- For additional protection for s3 contents:
+  - Enable server-side encryption on the S3 bucket
+  - Restrict the instance profile role to only read from S3 until the application requires the ability to write. (e.g. when the user can use the application to perform CRUD operations on the recipes)
