@@ -1,0 +1,21 @@
+# CF issues
+
+## Before fix
+
+```bash
+➜  nano-aca-03 git:(master) ✗ cfripper c3-vpc.yml
+Analysing c3-vpc.yml...
+Valid: False
+Issues found:
+	- EC2SecurityGroupMissingEgressRule: Missing egress rule in NoIngressSecurityGroup means all traffic is allowed outbound. Make this explicit if it is desired configuration
+➜  nano-aca-03 git:(master) ✗
+```
+
+## After fix
+
+```bash
+➜  nano-aca-03 git:(master) ✗ cfripper c3-vpc.yml
+Analysing c3-vpc.yml...
+Valid: True
+➜  nano-aca-03 git:(master) ✗
+```
